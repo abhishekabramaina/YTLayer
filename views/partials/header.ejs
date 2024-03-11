@@ -1,0 +1,48 @@
+<!-- Your main EJS file (e.g., home.ejs) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Navbar.ejs -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand" href="/">YT Lama</a>
+
+        <!-- Toggler/collapsible Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <% if (locals.user && locals.user.name) { %>
+                    <!-- If user is logged in, show username dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Welcome, <%= user.name %>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <form action="/user/logout" method="POST" class="dropdown-item">
+                                <button type="submit" class="btn btn-outline-danger">Logout</button>
+                            </form>
+                        </div>
+                    </li>
+                <% } else { %>
+                    <!-- If user is not logged in, show login link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/login">Login</a>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>

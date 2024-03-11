@@ -1,0 +1,17 @@
+<%- include('./partials/header.ejs') %>
+
+<div id="banner" style="display: block; background-color: #f0f0f0; color: #333; padding: 20px; text-align: center; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; max-width: 500px; z-index: 999; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+    <p style="font-size: 18px; margin-bottom: 10px;">Welcome to YTLama!</p>
+    <p style="font-size: 16px;">We are currently working hard to extend our Services. Thank you for visiting!</p>
+    <button style="background-color: #ddd; border: none; color: #333; padding: 10px 20px; cursor: pointer; margin-top: 20px;" onclick="closeBanner()">Close</button>
+</div>
+<script>
+    
+
+    // Function to close the banner
+    function closeBanner() {
+        document.getElementById('banner').style.display = 'none';
+    }
+</script>
+
+<%- include('./partials/footer.ejs') %>
