@@ -97,7 +97,6 @@ app.post('/user/logout', function(req, res, next) {
       });
     });
 
-app.get('/login/federated/google', passport.authenticate('google'));
 
 app.get('/oauth2/redirect/google', passport.authenticate('google', {
     successRedirect: '/home',
