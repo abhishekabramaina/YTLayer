@@ -75,7 +75,7 @@ app.get('/home',(req,res)=>{
 })
 
 app.get("/user/login",(req,res)=>{
-    res.redirect("/login/federated/google")
+    res.redirect("/oauth2/redirect/google")
 })
 
 passport.serializeUser(function(user, cb) {
